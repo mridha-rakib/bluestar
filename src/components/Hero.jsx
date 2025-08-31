@@ -1,5 +1,7 @@
-import React from 'react';
-import ConnectButtonWithModal from './ConnectButton';
+import React from "react";
+import ConnectButtonWithModal from "./ConnectButton";
+// ✅ import the video from src/assets
+import bgVideo from "../assets/bg_video.mp4"; // adjust the relative path if needed
 
 const Hero = () => {
   return (
@@ -9,10 +11,15 @@ const Hero = () => {
         autoPlay
         muted
         loop
+        playsInline       // ✅ important for iOS autoplay
+        preload="metadata"
+        aria-hidden="true"
       >
-        <source src="path/to/silent-video.mp4" type="video/mp4" />
+        <source src={bgVideo} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <div className="absolute inset-0 bg-black/50" />
+
       <div className="relative flex flex-col items-center justify-center h-full text-center text-white px-4">
         <div className="max-w-[1014px] flex flex-col items-center gap-6">
           <h2 className="text-4xl font-semibold leading-[48px] font-poppins">
@@ -21,7 +28,7 @@ const Hero = () => {
           <p className="max-w-[846px] text-base leading-6 font-medium font-poppins">
             Over 30 years of excellence in real estate — from custom homes to commercial developments, BlueStar builds beautiful, high-quality spaces with lasting value.
           </p>
-          <ConnectButtonWithModal/>
+          <ConnectButtonWithModal />
         </div>
       </div>
     </div>
