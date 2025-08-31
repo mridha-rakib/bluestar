@@ -4,39 +4,22 @@ import { X } from "lucide-react";
 import axios from "axios";
 
 const Modals = ({ closeModal }) => {
-  // Form state (use "message", not "msg")
-  const [formData, setFormData] = useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("");
 
-  const [status, setStatus] = useState(""); // success/error message
-
-  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submit (Axios → your Nodemailer API)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-
     try {
-      const res = await axios.post("/api/contact", {
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      });
-
+      const res = await axios.post("/api/contact", formData);
       if (res.status >= 200 && res.status < 300) {
         setStatus("Message sent successfully!");
-        setFormData({ email: "", subject: "", message: "" }); // reset form
+        setFormData({ email: "", subject: "", message: "" });
       } else {
         setStatus("Failed to send message. Try again!");
       }
@@ -46,76 +29,96 @@ const Modals = ({ closeModal }) => {
   };
 
   return (
-    <div className="relative bg-black flex flex-col justify-center items-center py-24">
-      <button className="absolute top-4 right-4" onClick={closeModal}>
-        <X className="text-white w-6 h-6" />
-      </button>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+      aria-modal="true"
+      role="dialog"
+    >
+      {/* Backdrop */}
+      <button
+        aria-label="Close"
+        onClick={closeModal}
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      />
 
-      <div>
-        <div className="flex flex-col lg:flex-row items-center gap-6 p-5 lg:p-12 bg-black/80 w-[852px] h-[652px] relative rounded-2xl">
-          {/* Left */}
-          <div className="flex flex-col items-center gap-6 w-[366px]">
-            <img src={layer1} alt="Logo" className="w-[250px] h-[46.37px]" />
-            <p className="text-white font-poppins font-medium text-[16px] leading-[24px] text-center">
-              Join Us - in building timeless spaces, creating lasting values.
-            </p>
-          </div>
+      {/* Panel */}
+      <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl bg-neutral-900/90">
+        {/* Close button (stays visible) */}
+        <button
+          onClick={closeModal}
+          className="absolute top-3 right-3 inline-flex items-center justify-center rounded-full p-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50"
+        >
+          <X className="text-white w-6 h-6" />
+          <span className="sr-only">Close</span>
+        </button>
 
-          {/* Right */}
-          <div className="flex flex-col items-center gap-6 w-[366px]">
-            <div className="flex flex-col items-center gap-3 w-full">
-              <h3 className="text-white font-poppins font-semibold text-[28px] leading-[36px] text-center">
-                Let's Connect
-              </h3>
-              <p className="text-white font-poppins font-medium text-[16px] leading-[24px] text-center">
-                Have questions or ideas? Connect with us—we're here to help
-                bring your vision to life!
+        {/* Content */}
+        <div className="p-5 sm:p-8 lg:p-10">
+          <div className="flex flex-col lg:flex-row items-center lg:items-center gap-8">
+            {/* Left */}
+            <div className="flex flex-col items-center lg:items-start gap-4 w-full lg:w-[366px]">
+              <img
+                src={layer1}
+                alt="Logo"
+                className="w-40 h-auto sm:w-56 lg:w-[250px]"
+              />
+              <p className="text-white/90 font-poppins font-medium text-sm sm:text-base text-center lg:text-left">
+                Join Us — in building timeless spaces, creating lasting values.
               </p>
             </div>
 
-            {/* Form */}
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-4 w-full"
-            >
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                required
-                className="w-full h-[52px] px-4 py-3 bg-[#E8F4FF] text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+            {/* Right */}
+            <div className="flex flex-col items-center lg:items-start gap-6 w-full lg:w-[366px]">
+              <div className="flex flex-col items-center lg:items-start gap-2 w-full">
+                <h3 className="text-white font-poppins font-semibold text-xl sm:text-2xl text-center lg:text-left">
+                  Let&apos;s Connect
+                </h3>
+                <p className="text-white/90 font-poppins text-sm sm:text-base text-center lg:text-left">
+                  Have questions or ideas? Connect with us—we&apos;re here to help bring your vision to life!
+                </p>
+              </div>
 
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="Enter subject"
-                required
-                className="w-full h-[52px] px-4 py-3 bg-[#E8F4FF] text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full h-12 px-4 bg-[#E8F4FF] text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
 
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Write your message..."
-                required
-                className="w-full h-[208px] px-4 py-3 bg-[#E8F4FF] text-gray-800 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Enter subject"
+                  required
+                  className="w-full h-12 px-4 bg-[#E8F4FF] text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
 
-              <button
-                type="submit"
-                className="w-full h-[52px] bg-[#1890FF] border-2 border-white text-white font-poppins font-medium text-[16px] rounded-md hover:bg-blue-700 transition"
-              >
-                Connect
-              </button>
-            </form>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Write your message..."
+                  required
+                  className="w-full min-h-40 px-4 py-3 bg-[#E8F4FF] text-gray-800 rounded-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
 
-            {status && <p className="text-white mt-2">{status}</p>}
+                <button
+                  type="submit"
+                  className="w-full h-12 bg-[#1890FF] border-2 border-white text-white font-poppins font-medium text-base rounded-md hover:bg-blue-700 transition"
+                >
+                  Connect
+                </button>
+              </form>
+
+              {status && <p className="text-white mt-1">{status}</p>}
+            </div>
           </div>
         </div>
       </div>
