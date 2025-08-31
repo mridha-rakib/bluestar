@@ -6,36 +6,32 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     email: "",
     subject: "",
-    msg: "",
+    message: "", // ✅ use "message" consistently
   });
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus("");
 
     try {
-      const response = await axios.post("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      // ✅ Axios: send data directly as 2nd arg
+      const res = await axios.post("/api/contact", {
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
       });
 
-      if (response.ok) {
+      // ✅ Axios: check status
+      if (res.status >= 200 && res.status < 300) {
         setStatus("✅ Message sent successfully!");
         setFormData({ email: "", subject: "", message: "" });
       } else {
@@ -43,7 +39,10 @@ const ContactSection = () => {
       }
     } catch (error) {
       console.error(error);
-      setStatus("⚠️ Failed to send. Please check your connection.");
+      setStatus(
+        "⚠️ Failed to send. " +
+          (error?.response?.data?.error || error.message || "Please try again.")
+      );
     } finally {
       setLoading(false);
     }
@@ -66,7 +65,6 @@ const ContactSection = () => {
 
         {/* Right Section */}
         <div className="flex flex-col items-center lg:items-start gap-6 lg:w-[366px]">
-          {/* Heading */}
           <div className="flex flex-col gap-3 text-center lg:text-left w-full">
             <h2 className="text-lg lg:text-2xl font-semibold text-gray-900">
               Let’s Connect
@@ -77,7 +75,6 @@ const ContactSection = () => {
             </p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
             <input
               type="email"
@@ -88,6 +85,7 @@ const ContactSection = () => {
               required
               className="p-3 bg-[#E8F4FF] rounded outline-none placeholder:text-gray-500 w-full"
             />
+
             <input
               type="text"
               name="subject"
@@ -97,14 +95,16 @@ const ContactSection = () => {
               required
               className="p-3 bg-[#E8F4FF] rounded outline-none placeholder:text-gray-500 w-full"
             />
+
             <textarea
-              name="message"
-              value={formData.message}
+              name="message"                   // ✅ matches state
+              value={formData.message}         // ✅ matches state
               onChange={handleChange}
               placeholder="Message"
               required
               className="p-3 bg-[#E8F4FF] rounded outline-none h-32 placeholder:text-gray-500 w-full"
-            ></textarea>
+            />
+
             <button
               type="submit"
               disabled={loading}
@@ -114,7 +114,6 @@ const ContactSection = () => {
             </button>
           </form>
 
-          {/* Status Message */}
           {status && <p className="text-sm mt-2">{status}</p>}
         </div>
       </div>
