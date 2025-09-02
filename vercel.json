@@ -1,28 +1,12 @@
 {
-  "version": 3,
+  "version": 2,
   "builds": [
     {
-      "src": "dist/**",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/service/com",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/service/res",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/service/cus",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/about",
-      "dest": "/index.html"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
