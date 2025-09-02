@@ -139,7 +139,7 @@ export const projectsData = {
     ],
   },
   cus: {
-    title: "Custom Home",
+    title: "Custom Homes",
     items: [
       {
         id: 1,
