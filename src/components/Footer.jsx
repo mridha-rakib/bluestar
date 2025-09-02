@@ -1,7 +1,7 @@
 import layer1 from "/logo_wh.svg";
 import { BookUser, Mail, Phone } from "lucide-react";
 import ConnectButtonWithModal from "./ConnectButton";
-
+import {Link} from "react-router-dom"
 const FooterSection = () => {
   return (
     <footer className="bg-[#212121] text-white">
@@ -32,9 +32,9 @@ const FooterSection = () => {
             <a href= "/" className="hover:underline focus:underline">
               Home
             </a>
-            <a href="/service/com" className="hover:underline focus:underline">
+            <Link to="/service/com" className="hover:underline focus:underline">
               Commercial &amp; Mixed Use
-            </a>
+            </Link>
             <a href="/service/res" className="hover:underline focus:underline">
               Residential Development
             </a>
