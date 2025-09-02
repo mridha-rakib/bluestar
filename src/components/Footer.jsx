@@ -1,7 +1,7 @@
 import layer1 from "/logo_wh.svg";
 import { BookUser, Mail, Phone } from "lucide-react";
 import ConnectButtonWithModal from "./ConnectButton";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom"
 const FooterSection = () => {
   return (
     <footer className="bg-[#212121] text-white">
@@ -28,15 +28,23 @@ const FooterSection = () => {
           </div>
 
           {/* Middle Column (Quick Links) */}
-          
-
-<nav className="flex flex-col items-start gap-3 sm:gap-3.5 text-sm sm:text-base">
-  <Link to="/" className="hover:underline focus:underline">Home</Link>
-  <Link to="/service/com" className="hover:underline focus:underline">Commercial & Mixed Use</Link>
-  <Link to="/service/res" className="hover:underline focus:underline">Residential Development</Link>
-  <Link to="/service/cus" className="hover:underline focus:underline">Custom Homes</Link>
-  <Link to="/about" className="hover:underline focus:underline">About</Link>
-</nav>
+          <nav className="flex flex-col items-start gap-3 sm:gap-3.5 text-sm sm:text-base">
+            <a href= "/" className="hover:underline focus:underline">
+              Home
+            </a>
+            <a href="/service/com" className="hover:underline focus:underline">
+              Commercial &amp; Mixed Use
+            </a>
+            <a href="/service/res" className="hover:underline focus:underline">
+              Residential Development
+            </a>
+            <a href="/service/cus" className="hover:underline focus:underline">
+              Custom Homes
+            </a>
+            <a href="/about" className="hover:underline focus:underline">
+              About
+            </a>
+          </nav>
 
           {/* Right Column (Contact + Socials) */}
           <div className="flex flex-col items-start gap-5">
