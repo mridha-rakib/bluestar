@@ -39,7 +39,7 @@ const FooterSection = () => {
               Residential Development
             </a>
             <a href="/service/cus" className="hover:underline focus:underline">
-              Custom House
+              Custom Homes
             </a>
             <a href="/about" className="hover:underline focus:underline">
               About
