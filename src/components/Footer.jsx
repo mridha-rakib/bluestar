@@ -29,19 +29,19 @@ const FooterSection = () => {
 
           {/* Middle Column (Quick Links) */}
           <nav className="flex flex-col items-start gap-3 sm:gap-3.5 text-sm sm:text-base">
-            <a href="#home" className="hover:underline focus:underline">
+            <a href= "/" className="hover:underline focus:underline">
               Home
             </a>
-            <a href="#commercial" className="hover:underline focus:underline">
+            <a href="/service/com" className="hover:underline focus:underline">
               Commercial &amp; Mixed Use
             </a>
-            <a href="#residential" className="hover:underline focus:underline">
+            <a href="/service/res" className="hover:underline focus:underline">
               Residential Development
             </a>
-            <a href="#custom" className="hover:underline focus:underline">
+            <a href="/service/cus" className="hover:underline focus:underline">
               Custom House
             </a>
-            <a href="#about" className="hover:underline focus:underline">
+            <a href="/about" className="hover:underline focus:underline">
               About
             </a>
           </nav>
@@ -63,7 +63,7 @@ const FooterSection = () => {
             <div className="mt-1 flex flex-wrap items-center gap-5">
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61566323320799"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
