@@ -53,12 +53,17 @@ const FooterSection = () => {
               1900 W. Nickerson St. Suite 116, PMB #39 Seattle, WA 98119
             </p>
             <p className="text-sm sm:text-base flex items-center gap-2">
-              <Phone className="w-5 h-5 shrink-0" /> 206-850-7883
+              <Phone className="w-5 h-5 shrink-0" /> 206-650-7883
             </p>
-            <p className="text-sm sm:text-base flex items-center gap-2">
+            {/* <p className="text-sm sm:text-base flex items-center gap-2">
               <Mail className="w-5 h-5 shrink-0" /> info@bluestarmgt.com
-            </p>
-
+            </p> */}
+            <p className="text-sm sm:text-base flex items-center gap-2">
+  <Mail className="w-5 h-5 shrink-0" />
+  <a href="mailto:info@bluestarmgt.com" className="hover:underline">
+    info@bluestarmgt.com
+  </a>
+</p>
             {/* Socials */}
             <div className="mt-1 flex flex-wrap items-center gap-5">
               {/* Facebook */}

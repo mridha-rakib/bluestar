@@ -1,7 +1,7 @@
 import React from "react";
 import ConnectButtonWithModal from "./ConnectButton";
 // ✅ import the video from src/assets
-import bgVideo from "../assets/bg_video.mp4"; // adjust the relative path if needed
+import bgVideo from "../assets/video.mp4"; // adjust the relative path if needed
 
 const Hero = () => {
   return (

@@ -44,7 +44,7 @@ export const projectsData = {
     items: [
       {
         id: 1,
-        title: "Project One",
+        title: "BlueStar Home Office - Seattle, WA",
         image: img1,
         description:
           'Ryco Equipment is a 40,000 plus square foot facility located in Mountlake Terrace, Washington specifically designed and built as a state of the art equipment designer and builder of custom fish processing technology.  BlueStar was enagaged to provide design and construction services that included complex electrical and plumbing systems as well as "clean room" construction.  ',
@@ -52,13 +52,13 @@ export const projectsData = {
       },
       {
         id: 2,
-        title: "Project Two",
+        title: "Ryco Manufacturing Building - Shoreline, WA",
         image: img2,
         images: [],
       },
       {
         id: 3,
-        title: "Project Two",
+        title: "Fauntleroy Place - Seattle, WA",
         image: img3,
         description:
           "Fauntleroy Place is a 210 unit mixed use retail/residential project located atthe gateway to the West Seattle Neighborhood.  Bluestar originally acquired the site from Hanock Fabrics.  After sucessfully lobbying the City of Seattle to abandon a public alleyway in order to create the necessary footprint, Bluestar acquired entitlements and permits for the project before selling to a third party to complete construction.  The retail portion of the building was ultimately leased to 24 Hour Fitness.  ",
@@ -66,24 +66,21 @@ export const projectsData = {
       },
       {
         id: 4,
-        title: "Project Two",
+        title: "Multicare MRI Clinic - Tacoma, WA",
         image: img4,
         images: [],
       },
       {
         id: 5,
-        title: "Project Two",
+        title: "The Blake Apartments - Seattle, WA",
         image: img5,
         images: [],
       },
       {
         id: 6,
-        title: "Project Two",
+        title: "Cielo Vista Condominiums - Las Vegas, NV",
         image: img6,
-        children: [
-          { id: 21, title: "Project Two-A", image: "/images/com2a.png" },
-          { id: 22, title: "Project Two-B", image: "/images/com2b.png" },
-        ],
+        
       },
     ],
   },
@@ -92,7 +89,7 @@ export const projectsData = {
     items: [
       {
         id: 1,
-        title: "Project One",
+        title: "Sandhurst Cove - Indio, CA",
         description:
           "Sandhurst Cove is a 132 lot residential, single family home project designed, developed and constructed by BlueStar's Residential Division.  The project was conceived in late 2006 and was fully developed and built out in record time by 2008, selling out all units within 18 months.",
         image: img12,
@@ -100,31 +97,31 @@ export const projectsData = {
       },
       {
         id: 2,
-        title: "Project Two",
+        title: "Shoreline Sustainable Condominiums - Shoreline, WA",
         image: img22,
         images: [],
       },
       {
         id: 3,
-        title: "Project Three",
+        title: "407 Townhomes - Tacoma, WA",
         image: img32,
         images: [],
       },
       {
         id: 4,
-        title: "Project Four",
+        title: "Meadowpark Townhomes - University Place, WA",
         image: img42,
         images: [],
       },
       {
         id: 5,
-        title: "Project Five",
+        title: "Parkland Condominiums - Parkland, WA",
         image: img52,
         images: [r51, r52, r53],
       },
       {
         id: 6,
-        title: "Project Six",
+        title: "Roosevelt Condominiums - Seattle, WA",
         description:
           "Centrally located in this highly sought after North Seattle neighborhood, this condominium project features light, bright open spaces, custom finishes, ample onsite parking, all within a short commute to downtown and walking distance to shopping, entertainment and outdoor parks and playfields",
         image: img62,
@@ -143,7 +140,7 @@ export const projectsData = {
     items: [
       {
         id: 1,
-        title: "Project One",
+        title: "Lake Washington Waterfront - Seattle, WA",
         description:
           "BlueStar constructed this home in the Seattle neighborhood of Lake Forest Park for a private client interested in a custom designed home on their lot on Lake Washington.  The project presented complex challenges due to its proximity to the lake that required a deep excavation and steel piles driven into the site to maintain its stability. In addition, many design ",
         image: imgh1,
@@ -151,19 +148,19 @@ export const projectsData = {
       },
       {
         id: 2,
-        title: "Project Two",
+        title: "Desert Custom - Palm Desert, CA",
         image: imgh2,
         images: [],
       },
       {
         id: 3,
-        title: "Project Three",
+        title: "Family Custom - Lakewood, WA",
         image: imgh3,
         images: [],
       },
       {
         id: 4,
-        title: "Project Four",
+        title: "Custom DADU - Parkland, WA",
         image: imgh4,
         images: [],
       },
