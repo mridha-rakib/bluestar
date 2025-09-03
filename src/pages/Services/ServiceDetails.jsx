@@ -64,7 +64,7 @@ const ServiceDetail = () => {
           ))}
         </div>
          {project?.more && (
-          <button className="group mb-50 relative inline-block px-6 py-3 font-poppins font-medium text-sm sm:text-base lg:text-lg text-white bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-out">
+          <button className="flex items-center mb-50 justify-center px-8 py-5 w-[200px] h-[52px] bg-[#1890FF] border-2 border-gray-400 font-poppins font-medium text-base leading-6 text-white hover:bg-[#1677d2] transition-colors duration-200">
             <a
   href="https://media.showingtimeplus.com/sites/6630-52nd-ave-w-tacoma-wa-98467-15104474/branded"
   className="inline-flex items-center gap-2 text-center"
