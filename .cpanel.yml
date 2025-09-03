@@ -1,0 +1,6 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/wine1501/public_html/BlueStar
+    - npm install
+    - npm run build
+    - /bin/cp -R dist/* $DEPLOYPATH
