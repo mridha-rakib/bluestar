@@ -33,10 +33,19 @@ import r64 from "../assets/r6-4.jpg";
 import r65 from "../assets/r6-5.jpg";
 import r66 from "../assets/r6-6.jpg";
 
+
 import ch11 from "../assets/ch1-1.webp";
 import ch12 from "../assets/ch1-2.webp";
 import ch13 from "../assets/ch1-3.webp";
 import ch14 from "../assets/ch1-4.webp";
+
+
+import m1 from "../assets/steve9003-attachments (3)/5-web-or-mls-52nd Ave W-06042025-005.jpg";
+import m2 from "../assets/steve9003-attachments (3)/6-web-or-mls-52nd Ave W-06042025-006.jpg";
+import m3 from "../assets/steve9003-attachments (3)/11-web-or-mls-52nd Ave W-06042025-011.jpg";
+import m4 from "../assets/steve9003-attachments (3)/17-web-or-mls-52nd Ave W-06042025-017.jpg";
+import m5 from "../assets/steve9003-attachments (3)/20-web-or-mls-52nd Ave W-06042025-020.jpg";
+import m6 from "../assets/steve9003-attachments (3)/26-web-or-mls-52nd Ave W-06042025-026.jpg";
 
 export const projectsData = {
   com: {
@@ -111,7 +120,8 @@ export const projectsData = {
         id: 4,
         title: "Meadowpark Townhomes - University Place, WA",
         image: img42,
-        images: [],
+        images: [m1,m2,m3,m4,m5,m6],
+        more:"Explore More"
       },
       {
         id: 5,

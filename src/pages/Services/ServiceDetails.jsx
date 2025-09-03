@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import FooterSection from "../../components/Footer";
 import { projectsData } from "../../Data/projectData";
+import { ChevronRight, ChevronsRight } from "lucide-react";
 
 const chunkArray = (arr, size) => {
   const chunks = [];
@@ -44,7 +45,7 @@ const ServiceDetail = () => {
         )}
 
         {/* Image Grid */}
-        <div className="flex flex-col items-center gap-6 w-full mb-[100px]">
+        <div className="flex flex-col items-center gap-6 w-full mb-[50px]">
           {imageGroups.map((group, rowIdx) => (
             <div
               key={rowIdx}
@@ -58,9 +59,24 @@ const ServiceDetail = () => {
                   className={`w-full sm:w-[566px] lg:w-[566px] h-[271px] sm:h-[425px] lg:h-[425px] object-cover rounded-lg shadow`}
                 />
               ))}
+              
             </div>
           ))}
         </div>
+         {project?.more && (
+          <button className="group mb-50 relative inline-block px-6 py-3 font-poppins font-medium text-sm sm:text-base lg:text-lg text-white bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-out">
+            <a
+  href="https://media.showingtimeplus.com/sites/6630-52nd-ave-w-tacoma-wa-98467-15104474/branded"
+  className="inline-flex items-center gap-2 text-center"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {project.more}
+  <ChevronsRight />
+  
+</a>
+          </button>
+        )}
       </div>
 
       <FooterSection />
