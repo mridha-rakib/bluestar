@@ -74,7 +74,7 @@ export const projectsData = {
         title: "BlueStar Home Office - Seattle, WA",
         description:"The BlueStar Home Office building was originally conceived as a state of the art office building featuring complete LEED technology and sustainable building materials. It's award winning design was completed by McDaniel Architects in Seattle, Washington.",
         image: img1,
-       images: [cc1],
+       images: [img1],
       },
       {
         id: 2,
