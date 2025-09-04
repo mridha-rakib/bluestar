@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link,  useLocation } from "react-router-dom";
 import layer1 from "/logo_wh.svg";
 import ConnectButtonWithModal from "./ConnectButton";
 import { ChevronDown } from "lucide-react";
@@ -206,7 +206,7 @@ const Navbar = () => {
     <nav className="absolute w-full gap-3 top-0 bg-black/80 text-white flex items-center justify-between h-[120px] px-6 md:px-[60px] lg:px-[141px] font-sans z-50">
       {/* Desktop Logo visible only on lg+ */}
       <div className="hidden lg:flex items-center">
-        <img src={layer1} alt="logo" width={219} height={41} />
+        <Link to="/"><img src={layer1} alt="logo" width={219} height={41} /></Link>
       </div>
 
       {/* Desktop nav (lg+) */}

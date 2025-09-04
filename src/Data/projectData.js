@@ -12,7 +12,7 @@ import img32 from "../assets/r3.jpeg";
 import img42 from "../assets/r4.jpeg";
 import img52 from "../assets/r5.webp";
 import img62 from "../assets/r6.jpeg";
-import img72 from "../assets/r7.jpeg";
+// import img72 from "../assets/r7.jpeg";
 
 import imgh1 from "../assets/h1.webp";
 import imgh2 from "../assets/h2.jpeg";
