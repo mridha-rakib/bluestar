@@ -64,15 +64,18 @@ const ServiceDetail = () => {
           ))}
         </div>
          {project?.more && (
-          <button className="flex items-center mb-50 justify-center px-8 py-5 w-[200px] h-[52px] bg-[#1890FF] border-2 border-gray-400 font-poppins font-medium text-base leading-6 text-white hover:bg-[#1677d2] transition-colors duration-200">
+          <button >
             <a
   href="https://media.showingtimeplus.com/sites/6630-52nd-ave-w-tacoma-wa-98467-15104474/branded"
   className="inline-flex items-center gap-2 text-center"
   target="_blank"
   rel="noopener noreferrer"
 >
-  {project.more}
+  <button className="flex items-center mb-50 justify-center px-8 py-5 w-[200px] h-[52px] bg-[#1890FF] border-2 border-gray-400 font-poppins font-medium text-base leading-6 text-white hover:bg-[#1677d2] transition-colors duration-200">
+    {project.more}
   <ChevronsRight />
+  </button>
+  
   
 </a>
           </button>

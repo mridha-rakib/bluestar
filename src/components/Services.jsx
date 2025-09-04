@@ -29,9 +29,9 @@ const ServicesSection = () => {
             <p className="font-poppins font-medium text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-center lg:text-left text-[#212121]">
               Our commercial and mixed-use projects combine functionality, aesthetic appeal, and long-term value. From office spaces and retail centers to integrated developments that blend residential, retail, and workspaces, we create dynamic environments designed to serve growing communities and evolving business needs.
             </p>
-            <button className="flex items-center gap-2 px-6 py-3 w-[127px] h-[52px] bg-[#1890FF]">
+            <button >
               <Link to="/service/com" className="flex gap-1.5 text-white font-poppins font-medium text-[16px] leading-[24px]">
-                View <MoveRightIcon />
+                <button className="flex items-center gap-2 px-6 py-3 w-[127px] h-[52px] bg-[#1890FF]">View <MoveRightIcon /></button>
               </Link>
             </button>
           </div>
@@ -49,9 +49,9 @@ const ServicesSection = () => {
             <p className="font-poppins font-medium text-[14px] lg:text-[16px] leading-[22px] lg:leading-[24px] text-center lg:text-left text-[#212121]">
               We specialize in thoughtfully planned residential communities, from custom homes to large-scale housing developments. Each project is designed with comfort, functionality, and long-term value in mind—creating beautiful living spaces that meet the needs of modern families while enhancing the surrounding neighborhood.
             </p>
-            <button className="flex items-center gap-2 px-6 py-3 w-[127px] h-[52px] bg-[#1890FF]">
+            <button >
               <Link to="/service/res" className="flex gap-1.5 text-white font-poppins font-medium text-[16px] leading-[24px]">
-                View <MoveRightIcon />
+                <button className="flex items-center gap-2 px-6 py-3 w-[127px] h-[52px] bg-[#1890FF]">View <MoveRightIcon /></button>
               </Link>
             </button>
           </div>
@@ -71,7 +71,7 @@ const ServicesSection = () => {
             </p>
             <button className="flex items-center gap-2 px-6 py-3 w-[127px] h-[52px] bg-[#1890FF]">
               <Link to="/service/cus" className="flex gap-1.5 text-white font-poppins font-medium text-[16px] leading-[24px]">
-                View <MoveRightIcon />
+                <button className="flex items-center gap-2 px-6 py-3 w-[127px] h-[52px] bg-[#1890FF]">View <MoveRightIcon /></button>
               </Link>
             </button>
           </div>

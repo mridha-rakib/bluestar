@@ -83,7 +83,7 @@ export const projectsData = {
          description:
           'Ryco Equipment is a 40,000 plus square foot facility located in Mountlake Terrace, Washington specifically designed and built as a state of the art equipment designer and builder of custom fish processing technology.  BlueStar was enagaged to provide design and construction services that included complex electrical and plumbing systems as well as "clean room" construction.  ',
         
-        images: [img2],
+        images: [cc1],
       },
       {
         id: 3,
