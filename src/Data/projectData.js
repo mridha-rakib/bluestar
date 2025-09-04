@@ -47,6 +47,20 @@ import m4 from "../assets/steve9003-attachments (3)/17-web-or-mls-52nd Ave W-060
 import m5 from "../assets/steve9003-attachments (3)/20-web-or-mls-52nd Ave W-06042025-020.jpg";
 import m6 from "../assets/steve9003-attachments (3)/26-web-or-mls-52nd Ave W-06042025-026.jpg";
 
+import l1 from "../assets/steve9003-attachments (5) (1)/lawndale 1.jpg"
+import l2 from "../assets/steve9003-attachments (5) (1)/lawndale 2.jpg"
+import l3 from "../assets/steve9003-attachments (5) (1)/lawndale 3.jpg"
+import l4 from "../assets/steve9003-attachments (5) (1)/lawndale listing 1.jpeg"
+import l5 from "../assets/steve9003-attachments (5) (1)/lawndale listing 11.jpeg"
+import l6 from "../assets/steve9003-attachments (5) (1)/lawndale listing 13.jpeg"
+import l7 from "../assets/steve9003-attachments (5) (1)/lawndale listing 18.jpeg"
+import l8 from "../assets/steve9003-attachments (5) (1)/lawndale listing 7.jpeg"
+
+
+import d1 from "../assets/steve9003-attachments (6)/861 2nd bath.jpg"
+import d2 from "../assets/steve9003-attachments (6)/861 adu.jpg"
+import d3 from "../assets/steve9003-attachments (6)/861 living.jpg"
+
 export const projectsData = {
   com: {
     title: "Commercial & Mixed Use",
@@ -171,8 +185,16 @@ export const projectsData = {
       {
         id: 4,
         title: "Custom DADU - Parkland, WA",
+        description:"Bluestar now offers custom DADU (Detached Accessory Dwelling Unit) as a secondary home built on the same lot as a primary residence. Designing one is both creative and technical, balancing regulations, aesthetics, and function. Here’s the step-by-step design process: 1. Site & Zoning Analysis. Research local codes: Check city zoning rules, lot size requirements, height limits, setbacks, parking requirements, and maximum square footage. Site conditions: Measure the lot, identify utilities (water, sewer, power), and note features like slope, trees, or easements. Placement options: Decide where the DADU fits best—often at the rear or side of the lot for privacy. 2. Needs & Goals Assessment. Purpose: Rental income, multigenerational living, guest space, office, or future downsizing? Occupants: Singles, couples, or families—this informs bedroom count, accessibility, and storage. Budget: Establish a realistic range, factoring in construction, permits, and site work. 3. Conceptual Design. Size & layout: Maximize efficiency with an open plan, vertical space, and built-ins. Style: Match or complement the primary home’s architecture, or choose a contrasting modern design. Privacy: Place windows, entries, and outdoor areas to reduce sightlines between the main house and DADU. Outdoor connection: Patios, decks, or shared gardens improve livability. 4. Schematic Design. Floor plans: Sketch multiple options for living, kitchen, bath, and bedroom placement. Mass & form: Develop 3D studies or models to understand rooflines, scale, and shadows. Sustainability: Integrate energy-efficient systems, natural lighting, and good insulation early. 5. Design Development. Detailed drawings: Refine kitchen, bath, storage, and circulation. Material selection: Choose siding, roofing, windows, and finishes within budget. Systems planning: HVAC, plumbing, and electrical systems. 6. Permitting & Approvals. Submit plans: Work with an architect, designer, or engineer to prepare permit drawings. City review: Address zoning, building codes, energy requirements, and any neighborhood covenants. 7. Construction Documentation. 8. Construction. Site prep: Grading, utility hookups, foundation work. Build: Framing, enclosure, interior finishes, and landscaping. Inspections: City checks for code compliance at each stage. 9. Finalization. Landscaping: Complete privacy plantings, pathways, and outdoor space. Occupancy permit: Approved before move-in or rental.",
+
         image: imgh4,
-        images: [],
+        images: [d1,d2,d3],
+      },
+      {
+        id: 5,
+        title: "Lawndale",
+        image:l4 ,
+        images: [l1,l2,l3,l6,l5,l7,l8],
       },
     ],
   },
