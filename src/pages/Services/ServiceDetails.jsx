@@ -39,8 +39,8 @@ const ServiceDetail = () => {
 
         {/* Subtitle / description */}
         {project?.description && (
-          <p className="font-poppins font-normal text-[14px] sm:text-[16px] lg:text-[16px] leading-[22px] sm:leading-[24px] lg:leading-[24px] text-[#212121] text-center max-w-[361px] sm:max-w-[600px] lg:max-w-[1156px]">
-            {project.description}
+          <p className="font-poppins font-normal text-[14px] sm:text-[16px] lg:text-[16px] leading-[22px] sm:leading-[24px] lg:leading-[24px] text-[#212121] text-left max-w-[361px] sm:max-w-[600px] lg:max-w-[1156px]">
+            <div dangerouslySetInnerHTML={{ __html: project.description }}></div>
           </p>
         )}
 
