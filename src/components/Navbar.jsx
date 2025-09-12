@@ -203,7 +203,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="absolute w-full gap-3 top-0 bg-black/80 text-white flex items-center justify-between h-[120px] px-6 md:px-[60px] lg:px-[141px] font-sans z-50">
+    <nav className="absolute w-full gap-3 top-0 bg-black/80  text-white flex items-center justify-between h-[120px] px-6 md:px-[60px] lg:px-[141px] font-sans z-50">
       {/* Desktop Logo visible only on lg+ */}
       <div className="hidden lg:flex items-center">
         <Link to="/"><img src={layer1} alt="logo" width={219} height={41} /></Link>

@@ -29,21 +29,21 @@ const FooterSection = () => {
 
           {/* Middle Column (Quick Links) */}
           <nav className="flex flex-col items-start gap-3 sm:gap-3.5 text-sm sm:text-base">
-            <a href= "/" className="hover:underline focus:underline">
+            <Link to="/" className="hover:underline focus:underline">
               Home
-            </a>
-            <a href="/service/com" className="hover:underline focus:underline">
+            </Link>
+            <Link to="/service/com" className="hover:underline focus:underline">
               Commercial &amp; Mixed Use
-            </a>
-            <a href="/service/res" className="hover:underline focus:underline">
+            </Link>
+            <Link to="/service/res" className="hover:underline focus:underline">
               Residential Development
-            </a>
-            <a href="/service/cus" className="hover:underline focus:underline">
+            </Link>
+            <Link to="/service/cus" className="hover:underline focus:underline">
               Custom Homes
-            </a>
-            <a href="/about" className="hover:underline focus:underline">
+            </Link>
+            <Link to="/about" className="hover:underline focus:underline">
               About
-            </a>
+            </Link>
           </nav>
 
           {/* Right Column (Contact + Socials) */}
@@ -61,7 +61,7 @@ const FooterSection = () => {
             <p className="text-sm sm:text-base flex items-center gap-2">
   <Mail className="w-5 h-5 shrink-0" />
   <a href="mailto:info@bluestarmgt.com" className="hover:underline">
-    info@bluestarmgt.com
+    steve@bluestarmgt.com
   </a>
 </p>
             {/* Socials */}

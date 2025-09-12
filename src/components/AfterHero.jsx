@@ -2,9 +2,9 @@ import layer1 from "/logo_bl.svg";
 
 const AfterHero = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-[141px] lg:px-[144px] pb-[120px] px-4 w-full max-w-[1220px] mx-auto">
+    <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-[141px] lg:px-[80px] xl:px-[144px] pb-[120px] px-4 w-full md:w-auto max-w-[1220px] mx-auto">
       {/* Logo */}
-      <div className="flex justify-center lg:justify-start w-full lg:w-auto">
+      <div className="flex justify-center lg:justify-start w-full ">
         <img
           src={layer1}
           alt="BlueStar Logo"
