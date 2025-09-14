@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import layer1 from "/logo_wh.svg";
 import { X } from "lucide-react";
-import axios from "axios";
 
 const Modals = ({ closeModal }) => {
-  const [formData, setFormData] = useState({ email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
@@ -15,16 +18,30 @@ const Modals = ({ closeModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+
     try {
-      const res = await axios.post("/api/contact", formData);
-      if (res.status >= 200 && res.status < 300) {
+      const res = await fetch(
+        "https://bluestar-server.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await res.json(); // ✅ parse the JSON response
+
+      if (res.ok && data.success) {
         setStatus("Message sent successfully!");
         setFormData({ email: "", subject: "", message: "" });
       } else {
-        setStatus("Failed to send message. Try again!");
+        setStatus("Failed to send message: " + (data.error || res.statusText));
       }
     } catch (error) {
-      setStatus("Error: " + (error?.response?.data?.error || error.message));
+      console.error(error);
+      setStatus("Error: " + (error?.message || "Network error"));
     }
   };
 
@@ -74,12 +91,16 @@ const Modals = ({ closeModal }) => {
                   Let&apos;s Connect
                 </h3>
                 <p className="text-white/90 font-poppins text-sm sm:text-base text-center lg:text-left">
-                  Have questions or ideas? Connect with us—we&apos;re here to help bring your vision to life!
+                  Have questions or ideas? Connect with us—we&apos;re here to
+                  help bring your vision to life!
                 </p>
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-4 w-full"
+              >
                 <input
                   type="email"
                   name="email"

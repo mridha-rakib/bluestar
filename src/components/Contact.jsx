@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import layer1 from "/logo_bl.svg";
-import axios from "axios";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -19,32 +18,31 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setStatus("");
+    setStatus("Sending...");
 
     try {
-      // ✅ Axios: send data directly as 2nd arg
-      const res = await axios.post("/api/contact", {
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      });
+      const res = await fetch(
+        "https://bluestar-server.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-      // ✅ Axios: check status
-      if (res.status >= 200 && res.status < 300) {
-        setStatus("✅ Message sent successfully!");
+      const data = await res.json(); // ✅ parse the JSON response
+
+      if (res.ok && data.success) {
+        setStatus("Message sent successfully!");
         setFormData({ email: "", subject: "", message: "" });
       } else {
-        setStatus("❌ Something went wrong. Try again.");
+        setStatus("Failed to send message: " + (data.error || res.statusText));
       }
     } catch (error) {
       console.error(error);
-      setStatus(
-        "⚠️ Failed to send. " +
-          (error?.response?.data?.error || error.message || "Please try again.")
-      );
-    } finally {
-      setLoading(false);
+      setStatus("Error: " + (error?.message || "Network error"));
     }
   };
 
@@ -97,8 +95,8 @@ const ContactSection = () => {
             />
 
             <textarea
-              name="message"                   // ✅ matches state
-              value={formData.message}         // ✅ matches state
+              name="message" // ✅ matches state
+              value={formData.message} // ✅ matches state
               onChange={handleChange}
               placeholder="Message"
               required
